@@ -1,0 +1,25 @@
+pool: Hosted Windows 2019 with VS2019
+
+steps:
+
+- checkout: self
+  clean: true
+
+- task: MSBuild@1
+  displayName: Restore
+  inputs:
+    solution: Txfs.sln
+    msbuildArguments: /t:Restore /p:Configuration=Release /m
+
+- task: MSBuild@1
+  displayName: Build
+  inputs:
+    solution: Txfs.sln
+    msbuildArguments: /p:PackOnBuild=true /p:Configuration=Release
+
+- task: VSTest@2
+  displayName: Test
+  inputs:
+    testAssemblyVer2: Txfs.Tests\bin\*\*\*.Tests.dll
+    diagnosticsEnabled: false
+    rerunFailedTests: false
