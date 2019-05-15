@@ -48,7 +48,7 @@ namespace Txfs.Impl
             File.Move(this.FullPath, tempPath);
 
             this.transactionLog.CommitActions.Push(() => File.Delete(tempPath));
-            this.transactionLog.RollbackActions.Push(() => File.Move(this.FullPath, tempPath));
+            this.transactionLog.RollbackActions.Push(() => File.Move(tempPath, this.FullPath));
         }
 
         public void WriteJsonFile(object contents)

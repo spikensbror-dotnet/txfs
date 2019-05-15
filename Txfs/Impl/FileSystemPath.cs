@@ -68,7 +68,12 @@ namespace Txfs.Impl
 
         public override bool Equals(object obj)
         {
-            return this.FullPath.Equals(obj);
+            if (obj == null || !(obj is FileSystemPath))
+            {
+                return false;
+            }
+
+            return this.FullPath.Equals(((FileSystemPath)obj).FullPath);
         }
 
         public override int GetHashCode()

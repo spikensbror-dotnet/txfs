@@ -1,4 +1,6 @@
-﻿namespace Txfs.Impl
+﻿using System.Linq;
+
+namespace Txfs.Impl
 {
     class FileSystemTransaction : IFileSystemTransaction
     {
