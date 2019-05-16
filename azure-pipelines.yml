@@ -1,5 +1,7 @@
 pool: Hosted Windows 2019 with VS2019
 name: 1.0.0$(Rev:.r)
+variables:
+  projectName: 'Txfs'
 
 steps:
 
@@ -23,21 +25,21 @@ steps:
     runInParallel: true
     runTestsInIsolation: true
 
-- script: dotnet test $(System.DefaultWorkingDirectory)/Txfs.Tests/Txfs.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+- script: dotnet test $(System.DefaultWorkingDirectory)/$(projectName).Tests/$(projectName).Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
   displayName: 'Code coverage'
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish coverage results'
   inputs:
     codeCoverageTool: 'cobertura'
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/Txfs.Tests/coverage.cobertura.xml'
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/$(projectName).Tests/coverage.cobertura.xml'
 
 - task: NuGetCommand@2
   displayName: 'NuGet Pack'
   inputs:
     command: 'pack'
     feedsToUse: 'select'
-    packagesToPack: 'Txfs/*.csproj'
+    packagesToPack: '$(projectName)/*.csproj'
     configuration: 'Release'
     packDestination: '$(Build.ArtifactStagingDirectory)/packages'
     versioningScheme: 'byBuildNumber'
