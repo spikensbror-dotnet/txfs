@@ -47,6 +47,13 @@ steps:
     publishLocation: 'Container'
 
 - task: PublishBuildArtifacts@1
+  name: 'PublishRunSettings'
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/Production.runsettings'
+    ArtifactName: 'tests'
+    publishLocation: 'Container'
+
+- task: PublishBuildArtifacts@1
   name: 'PublishTests'
   inputs:
     PathtoPublish: '$(System.DefaultWorkingDirectory)/Txfs.Tests/bin/Release'
