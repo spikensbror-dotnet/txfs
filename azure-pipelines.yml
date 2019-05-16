@@ -28,6 +28,7 @@ steps:
     searchFolder: '$(System.DefaultWorkingDirectory)'
     codeCoverageEnabled: true
     runSettingsFile: 'Production.runsettings'
+    publishRunAttachments: true
 
 - task: NuGetCommand@2
   name: 'Pack'
