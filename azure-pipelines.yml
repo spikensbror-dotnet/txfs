@@ -40,14 +40,14 @@ steps:
     versioningScheme: 'byBuildNumber'
 
 - task: PublishBuildArtifacts@1
-  name: 'PublishArtifacts'
+  name: 'PublishPackages'
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/packages'
     ArtifactName: 'packages'
     publishLocation: 'Container'
 
 - task: PublishBuildArtifacts@1
-  name: 'PublishArtifacts'
+  name: 'PublishTests'
   inputs:
     PathtoPublish: '$(System.DefaultWorkingDirectory)/Txfs.Tests/bin/Release'
     ArtifactName: 'tests'
