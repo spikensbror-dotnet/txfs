@@ -6,3 +6,7 @@
 [![NuGet TXFS](https://img.shields.io/nuget/v/Txfs.svg)](https://www.nuget.org/packages/Txfs/)
 
 TXFS (transactable file system) is an open-source .NET library that allows transactional file system access.
+
+## Usage
+
+See [TransactedFileSystemPathTests.cs](Txfs.Tests/TransactedFileSystemPathTests.cs) for a complete usage example.

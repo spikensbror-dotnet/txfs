@@ -2,6 +2,9 @@
 
 namespace Txfs
 {
+    /// <summary>
+    /// String extension for AsFileSystemPath functionality.
+    /// </summary>
     public static class StringAsFileSystemPathExtension
     {
         /// <summary>

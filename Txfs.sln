@@ -5,7 +5,15 @@ VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Txfs", "Txfs\Txfs.csproj", "{B6AEA23A-6439-4A6A-8434-4CF71DB522D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Txfs.Tests", "Txfs.Tests\Txfs.Tests.csproj", "{26240405-B86D-4A78-8F53-FFF4E50FBC7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Txfs.Tests", "Txfs.Tests\Txfs.Tests.csproj", "{26240405-B86D-4A78-8F53-FFF4E50FBC7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{985F63D6-9510-4034-BC89-0BBEE64A7A22}"
+	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
+		LICENSE = LICENSE
+		Production.runsettings = Production.runsettings
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

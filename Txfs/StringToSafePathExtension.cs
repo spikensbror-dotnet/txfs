@@ -2,6 +2,9 @@
 
 namespace Txfs
 {
+    /// <summary>
+    /// String extension for ToSafePath functionality.
+    /// </summary>
     public static class StringToSafePathExtension
     {
         /// <summary>
